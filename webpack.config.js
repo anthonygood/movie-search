@@ -14,7 +14,7 @@ configPlugin = new webpack.DefinePlugin({
 
 module.exports = {
   context: srcPath,
-  entry: path.join(srcPath, 'app', 'app.js'),
+  entry: path.join(srcPath, 'index.js'),
   output: {
     path: buildPath,
     filename: "bundle.js"

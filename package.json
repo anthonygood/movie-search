@@ -4,7 +4,9 @@
   "description": "Simple React app for searching The Movie Database.",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "serve": "webpack-dev-server --content-base dist"
   },
   "author": "Anthony Good",
   "license": "ISC",

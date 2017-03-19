@@ -1,9 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import SearchInput from '../search_input/search_input'
-import movieActions from './movie_actions'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import SearchResults from '../search_results/search_results'
 
 class App extends React.Component {
   render() {

@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import movieStore from './app/movie_store'
-import App from './app/app'
+import movieStore from './app/store'
+import App from './app/AppContainer'
 
 ReactDOM.render(
   <Provider store={ movieStore() }>

@@ -11,22 +11,10 @@ class App extends React.Component {
       <div>
         <h1>Search for a movie:</h1>
         <SearchInput onSubmit={this.props.actions.onSearch} />
+        <SearchResults {...this.props} />
       </div>
     )
   }
 }
 
-const mapStateToProps = (state, props) => {
-  return state
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    actions: bindActionCreators(movieActions, dispatch)
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
+export default App

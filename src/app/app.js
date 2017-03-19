@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import SearchInput from '../search_input/search_input'
-import SearchResults from '../search_results/search_results'
+import SearchInput from '../search_input/SearchInput'
+import SearchResults from '../search_results/SearchResults'
+import './app.css'
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
-      <div>
-        <h1>Search for a movie:</h1>
+      <div className={this._className()}>
         <SearchInput onSubmit={this.props.actions.onSearch} />
         <SearchResults {...this.props} />
       </div>
     )
+  }
+
+  _className() {
+    return 'App ' + (this.props.searching ? 'loading' : '')
   }
 }
 

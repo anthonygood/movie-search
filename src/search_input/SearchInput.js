@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import './search_input.css'
 
 class SearchInput extends React.Component {
   constructor(props) {
@@ -12,8 +13,16 @@ class SearchInput extends React.Component {
 
   render() {
     return (
-      <input onChange={this._change} onFocus={this._onFocus} onBlur={this._onBlur}></input>
+      <div className='SearchInput'>
+        <input autoFocus placeholder={'Search for a movie'} onChange={this._change} onFocus={this._onFocus} onBlur={this._onBlur}></input>
+        <button disabled={this._disabled()} onClick={this._submitQuery.bind(this)}>Go</button>
+      </div>
     )
+  }
+
+  _disabled() {
+    // Button is disabled unless a query is present
+    return !this.state.query.length
   }
 
   _change(event) {
@@ -30,8 +39,12 @@ class SearchInput extends React.Component {
 
   _keyup(event) {
     if(event.code === 'Enter') {
-      this.props.onSubmit(this.state.query)
+      this._submitQuery()
     }
+  }
+
+  _submitQuery() {
+    if(this.state.query.length) { this.props.onSubmit(this.state.query) }
   }
 }
 

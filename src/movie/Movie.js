@@ -18,6 +18,8 @@ class Movie extends Component {
             <span className='title'>{this.props.title}</span><span className='release'>
               {' '}
               {this._release()}
+              <br />
+              {this.props.vote_average}/10 {' '} ({this.props.vote_count} votes)
             </span>
           </div>
         </div>

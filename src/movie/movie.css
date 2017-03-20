@@ -1,0 +1,32 @@
+.Movie {
+  cursor: pointer;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(250,250,250,0.2);
+  transition: transform 0.25s;
+}
+
+.Movie:first-child {
+  border-top: 1px solid rgba(250,250,250,0.2);
+}
+
+.Movie:hover {
+  background-color: rgba(250,250,250,0.1);
+}
+
+.Movie .info-container {
+  position: relative;
+  text-align: left;
+  padding-left: 100px;
+  width: 500px;
+  margin: auto;
+  min-height: 130px;
+}
+
+.Movie .info {
+  padding-top: 16px;
+}
+
+.Movie .title {
+  font-size: 32px;
+  color: rgba(250,250,250, 0.85);
+}

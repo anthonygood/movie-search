@@ -15,7 +15,7 @@ class SearchInput extends Component {
     return (
       <div className='SearchInput'>
         <input autoFocus placeholder={'Search for a movie'} onChange={this._change} onFocus={this._onFocus} onBlur={this._onBlur}></input>
-        <button disabled={this._disabled()} onClick={this._submitQuery.bind(this)}>Go</button>
+        <button disabled={this._disabled()} onClick={this._submitQuery.bind(this)}>GO</button>
       </div>
     )
   }

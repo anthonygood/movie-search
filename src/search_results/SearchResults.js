@@ -25,7 +25,7 @@ class SearchResults extends Component {
   _results() {
     return (
       <div>
-        {this.props.results.map((movie)=> <Movie key={movie.id} selectMovie={this.props.selectMovie} movie={movie} />)}
+        {this.props.results.map((movie)=> <Movie key={movie.id} selectMovie={this.props.selectMovie} {...movie} />)}
       </div>
     )
   }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import Movie from '../movie/Movie'
 
 class SearchResults extends Component {
@@ -25,7 +25,7 @@ class SearchResults extends Component {
   _results() {
     return (
       <div>
-        {this.props.results.map((movie)=> <Movie key={movie.id} {...movie} />)}
+        {this.props.results.map((movie)=> <Movie key={movie.id} selectMovie={this.props.selectMovie} movie={movie} />)}
       </div>
     )
   }
@@ -35,6 +35,10 @@ class SearchResults extends Component {
       <div>No results to display</div>
     )
   }
+}
+
+SearchResults.propTypes = {
+  selectMovie: PropTypes.func.isRequired
 }
 
 export default SearchResults

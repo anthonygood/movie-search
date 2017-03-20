@@ -25,4 +25,8 @@ const onSearch = (query) => {
   }
 }
 
-export default { onSearch }
+const onSelect = (movie) => {
+  return { type: types.SELECT_MOVIE, movie }
+}
+
+export default { onSearch, onSelect }

@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className={this._className()}>
         <SearchInput onSubmit={this.props.actions.onSearch} />
-        <SearchResults {...this.props} />
+        <SearchResults selectMovie={this.props.actions.onSelect} {...this.props} />
       </div>
     )
   }

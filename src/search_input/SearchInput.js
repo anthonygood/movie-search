@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import './search_input.css'
 
-class SearchInput extends React.Component {
+class SearchInput extends Component {
   constructor(props) {
     super(props)
     this._change = this._change.bind(this)

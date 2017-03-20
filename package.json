@@ -1,5 +1,6 @@
 {
   "name": "movie-search",
+  "repository": "https://github.com/anthonygood/movie-search",
   "version": "1.0.0",
   "description": "Simple React app for searching The Movie Database.",
   "main": "webpack.config.js",

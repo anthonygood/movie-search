@@ -5,8 +5,6 @@ class SearchInput extends Component {
   constructor(props) {
     super(props)
     this._change = this._change.bind(this)
-    this._onFocus = this._onFocus.bind(this)
-    this._onBlur = this._onBlur.bind(this)
     this._keyup = this._keyup.bind(this)
     this.state = { query: '' }
   }
@@ -14,7 +12,7 @@ class SearchInput extends Component {
   render() {
     return (
       <div className='SearchInput'>
-        <input autoFocus placeholder={'Search for a movie'} onChange={this._change} onFocus={this._onFocus} onBlur={this._onBlur}></input>
+        <input autoFocus placeholder={'Search for a movie'} onKeyPress={this._keyup} onChange={this._change}></input>
         <button disabled={this._disabled()} onClick={this._submitQuery.bind(this)}>GO</button>
       </div>
     )
@@ -29,16 +27,8 @@ class SearchInput extends Component {
     this.setState({ query: event.target.value })
   }
 
-  _onFocus() {
-    document.addEventListener('keyup', this._keyup)
-  }
-
-  _onBlur() {
-    document.removeEventListener('keyup', this._keyup)
-  }
-
   _keyup(event) {
-    if(event.code === 'Enter') {
+    if(event.key === 'Enter') {
       this._submitQuery()
     }
   }

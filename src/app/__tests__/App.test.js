@@ -1,14 +1,17 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import App from '../App'
+import connectController from '../../movies_controller/movies_controller'
 
 describe('App', () => {
-  const actions = { onSearch: ()=>{}, onSelect: ()=>{} }
+  const app = shallow(
+    <App connectController={connectController} />
+  )
 
   describe('className', () => {
     describe('not searching', () => {
       const app = shallow(
-        <App searching={false} actions={ actions } />
+        <App searching={false} connectController={connectController} />
       )
 
       it('is simply App', () => {
@@ -17,9 +20,7 @@ describe('App', () => {
     })
 
     describe('when search request is pending', () => {
-      const app = shallow(
-        <App searching={true} actions={ actions } />
-      )
+      app.instance().setState({ searching: true })
 
       it('adds .loading class', () => {
         expect(app.find('.App').hasClass('loading')).toEqual(true)

@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import movieStore from './app/store'
-import App from './app/AppContainer'
+import App from './app/app'
+import connectController from './movies_controller/movies_controller'
 import './main.css'
+import movieAPI from './lib/themoviedb'
+
+// Set API_KEY from env
+movieAPI.common.api_key = process.env.API_KEY
 
 ReactDOM.render(
-  <Provider store={ movieStore() }>
-    <App />
-  </Provider>,
+  <App connectController={connectController} />,
   document.getElementById('root')
 )
